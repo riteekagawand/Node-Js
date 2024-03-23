@@ -1,9 +1,7 @@
-var http = require('http')
+const http = require('http');
 
-http
-.createServer((request, responce) => {
-    responce.writeHead("200", "not ok")
- responce.write('<a href="http://www.google.com">Hello World</a>');
- responce.end()
+http.createServer((request, response) => {
+    response.writeHead(302, { 'Location': 'http://www.google.com' });
+    response.end();
 })
-.listen(8080)
+.listen(8082);
